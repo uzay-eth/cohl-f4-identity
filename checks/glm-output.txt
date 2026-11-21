@@ -1,0 +1,129 @@
+python 3.12.3, sympy 1.14.0, mpmath 1.3.0
+
+S1  equation (2) holds as a polynomial identity in S for all k<=10, 0<=n<=k ... OK
+S2  sum_i C(A+k-1,k-i) C(B+r+k-1,i) = C(A+B+r+2k-2,k) = (S+k+r)_k/k!, k<=6 ... OK
+S3  (alpha,beta,gamma)=(1/2,3/2,1/3): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(1/2,3/2,1/3,0): [t^r], r=0..12, agree ... OK
+S3  (alpha,beta,gamma)=(-1/2,5/3,-7/5): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-1/2,5/3,-7/5,0): [t^r], r=0..12, agree ... OK
+S3  (alpha,beta,gamma)=(2,-3/2,5/2): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(2,-3/2,5/2,0): [t^r], r=0..12, agree ... OK
+S3  (alpha,beta,gamma)=(-5/3,-2/7,-11/6): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(-5/3,-2/7,-11/6,0): [t^r], r=0..12, agree ... OK
+S3  (alpha,beta,gamma)=(0,3/5,-4/3): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(0,3/5,-4/3,0): [t^r], r=0..12, agree ... OK
+S3  (alpha,beta,gamma)=(3,1,-2): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(3,1,-2,0): [t^r], r=0..12, agree ... OK
+S3  (alpha,beta,gamma)=(7/4,-9/4,3/7): all 91 coefficients [t^r y^s], 0<=s<=r<=12, agree exactly ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,2/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,-3/4): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,1/3): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,7/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,-7/5): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,-2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,-5/9): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,1/2): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,-1): [t^r], r=0..12, agree ... OK
+S4  (alpha,beta,gamma,x)=(7/4,-9/4,3/7,0): [t^r], r=0..12, agree ... OK
+S5  alpha=0.5 beta=1.5 gamma=0.333333333333333314829616256247390992939472198486328125 x=0.59999999999999997779553950749686919152736663818359375 t=0.200000000000000011102230246251565404236316680908203125  (L=0.6, R=0.25)
+     left  = 1.03057481818462672937585782902294086015
+     right = 1.03057481818462672937585782902294086015
+     scaled diff at cutoff 180 = 3.925e-60, cutoff-doubling drift = 3.0192e-61
+S5  alpha=-0.5 beta=1.6666666666666667406815349750104360282421112060546875 gamma=-1.399999999999999911182158029987476766109466552734375 x=-0.75 t=0.11999999999999999555910790149937383830547332763671875  (L=0.4465, R=0.5424)
+     left  = 1.795897022596089005772993912229170816766
+     right = 1.795897022596089005772993912229170816766
+     scaled diff at cutoff 300 = 5.1977e-61, cutoff-doubling drift = 0.0
+S5  alpha=2.0 beta=-1.5 gamma=2.5 x=3.0 t=-0.08000000000000000166533453693773481063544750213623046875  (L=0.6828, R=0.2743)
+     left  = 0.7284976010242861112054403933177598437301
+     right = 0.7284976010242861112054403933177598437301
+     scaled diff at cutoff 240 = 3.656e-60, cutoff-doubling drift = 4.2366e-56
+S5  alpha=-1.6666666666666667406815349750104360282421112060546875 beta=-0.28571428571428569842538536249776370823383331298828125 gamma=-1.8333333333333332593184650249895639717578887939453125 x=0.333333333333333314829616256247390992939472198486328125 t=0.11999999999999999555910790149937383830547332763671875  (L=0.4828, R=0.2066)
+     left  = 0.7853168980957186906017701432027402694014
+     right = 0.7853168980957186906017701432027402694014
+     scaled diff at cutoff 180 = 1.0112e-60, cutoff-doubling drift = 0.0
+S5  alpha=0.5 beta=1.5 gamma=0.333333333333333314829616256247390992939472198486328125 x=2.0 t=0.1499999999999999944488848768742172978818416595458984375  (L=0.7482, R=0.4152)
+     left  = 1.166461246908605667320955590688796407515
+     right = 1.166461246908605667320955590688796407515
+     scaled diff at cutoff 280 = 1.7339e-60, cutoff-doubling drift = 3.9846e-55
+S5  alpha=4.5 beta=-2.333333333333333481363069950020872056484222412109375 gamma=1.600000000000000088817841970012523233890533447265625 x=0.0 t=-0.299999999999999988897769753748434595763683319091796875  (L=0.7746, R=0.355)
+     left  = 0.7497179155906257522878154972074568010332
+     right = 0.7497179155906257522878154972074568010332
+     scaled diff at cutoff 280 = 8.5566e-61, cutoff-doubling drift = 8.5566e-61
+S5  maximum scaled difference over all cases: 3.925e-60 ... OK
+S6  alpha=0.5 beta=1.5 gamma=0.333333333333333314829616256247390992939472198486328125 x=0.59999999999999997779553950749686919152736663818359375 t=0.200000000000000011102230246251565404236316680908203125: F4 vs (1-t)^-g H3(g,S-g;A;w,(1-t)w) scaled diff = 3.774e-60
+S6  alpha=-0.5 beta=1.6666666666666667406815349750104360282421112060546875 gamma=-1.399999999999999911182158029987476766109466552734375 x=-0.75 t=0.11999999999999999555910790149937383830547332763671875: F4 vs (1-t)^-g H3(g,S-g;A;w,(1-t)w) scaled diff = 8.6628e-62
+S6  alpha=2.0 beta=-1.5 gamma=2.5 x=3.0 t=-0.08000000000000000166533453693773481063544750213623046875: F4 vs (1-t)^-g H3(g,S-g;A;w,(1-t)w) scaled diff = 3.3449e-60
+S6  alpha=-1.6666666666666667406815349750104360282421112060546875 beta=-0.28571428571428569842538536249776370823383331298828125 gamma=-1.8333333333333332593184650249895639717578887939453125 x=0.333333333333333314829616256247390992939472198486328125 t=0.11999999999999999555910790149937383830547332763671875: F4 vs (1-t)^-g H3(g,S-g;A;w,(1-t)w) scaled diff = 7.7788e-61
+S6  Horn H3 reduction of the report's novelty section verified numerically ... OK
+S7  (5) and (6) hold as exact t-series through t^12 for gamma=1/4, S=7/3, k=3 ... OK
+S7  (5) and (6) hold as exact t-series through t^12 for gamma=-7/5, S=-2/9, k=5 ... OK
+S7  (5) and (6) hold as exact t-series through t^12 for gamma=13/6, S=-11/7, k=0 ... OK
+
+  S1: PASS
+  S2: PASS
+  S3/S4: PASS
+  S5: PASS
+  S6: PASS
+  S7: PASS
+ALL CHECKS PASSED

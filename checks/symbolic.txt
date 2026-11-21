@@ -1,0 +1,45 @@
+SymPy 1.14.0, exact polynomial arithmetic over QQ
+Both series expanded in t and y=(x-1)/2. No parameter values assigned.
+For each [t^(k+r) y^k] multiply both sides by (A)_k k! r! / (gamma)_k.
+t^0: 1 zero residuals
+t^1: 2 zero residuals
+t^2: 3 zero residuals
+t^3: 4 zero residuals
+t^4: 5 zero residuals
+t^5: 6 zero residuals
+t^6: 7 zero residuals
+t^7: 8 zero residuals
+t^8: 9 zero residuals
+t^9: 10 zero residuals
+t^10: 11 zero residuals
+t^11: 12 zero residuals
+t^12: 13 zero residuals
+t^13: 14 zero residuals
+t^14: 15 zero residuals
+t^15: 16 zero residuals
+t^16: 17 zero residuals
+t^17: 18 zero residuals
+t^18: 19 zero residuals
+t^19: 20 zero residuals
+t^20: 21 zero residuals
+t^21: 22 zero residuals
+t^22: 23 zero residuals
+t^23: 24 zero residuals
+t^24: 25 zero residuals
+t^25: 26 zero residuals
+t^26: 27 zero residuals
+t^27: 28 zero residuals
+t^28: 29 zero residuals
+t^29: 30 zero residuals
+t^30: 31 zero residuals
+t^31: 32 zero residuals
+t^32: 33 zero residuals
+t^33: 34 zero residuals
+t^34: 35 zero residuals
+t^35: 36 zero residuals
+t^36: 37 zero residuals
+t^37: 38 zero residuals
+t^38: 39 zero residuals
+t^39: 40 zero residuals
+t^40: 41 zero residuals
+PASS through t^40 inclusive, 861 exact coefficient comparisons.
