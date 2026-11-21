@@ -8,6 +8,11 @@ it? The F4 function is the Appell F4 double hypergeometric series"
 
 ![Cohl's posted formula](cohl-f4.jpg)
 
+The image above is Howard S. Cohl's own posted image, reproduced from his
+[post](https://x.com/hcohl001/status/1700261948808700126) with credit and
+a link to it. It is not covered by this repository's licences; see
+[LICENSE-text](LICENSE-text).
+
 ## The statement
 
 In LaTeX, with $(a)_j$ the rising factorial:
@@ -74,15 +79,15 @@ re-collected into the posted double sum. Equivalently, it is the
 repeated-parameter $F_4\to F_1$ reduction of DLMF 16.16
 (16.16.5_5 and 16.16.8) followed by the quadratic $F_1\to H_3$ change of
 variables, re-collected by the duplication formula. The special case
-$\gamma=\alpha+\beta+1$ was published by Cohl and MacKenzie (eq. (13) of
-the arXiv HTML of *Generalizations and specializations of generating
-functions*, 2013 revision); in that case the inner sum reduces to
-$n=0$. A survey of the surrounding literature is part of
-[proof.md](proof.md).
+$\gamma=\alpha+\beta+1$ was published by Cohl and MacKenzie (eq. (7) of
+the arXiv PDF/latex source of *Generalizations and specializations of
+generating functions*, 2013 revision; the arXiv HTML rendering numbers
+the same equation (13)); in that case the inner sum reduces to $n=0$. A
+survey of the surrounding literature is part of [proof.md](proof.md).
 
 ## How to check
 
-One command, from the root of a clean clone, runs all four checks and
+One command, from the root of a clean clone, runs all six checks and
 prints `PASS` or `FAIL` for each (a few minutes on one core):
 
 ```sh
@@ -90,7 +95,7 @@ python3 checks/run_all.py
 ```
 
 It needs the pinned versions `sympy==1.14.0` and `mpmath==1.3.0`
-installed first: `python3 -m pip install -r requirements.txt`. The four
+installed first: `python3 -m pip install -r requirements.txt`. The six
 checks are
 
 | Check | What it does |
@@ -99,13 +104,19 @@ checks are
 | [`checks/check_symbolic.py`](checks/check_symbolic.py) | The proof's check: every coefficient $[t^r\,y^k]$ compared as an exact polynomial over $\mathbb{Q}$ in the parameters. |
 | [`checks/check_opus.py`](checks/check_opus.py) | First independent reviewer's check: exact rational coefficients, fully symbolic comparison, 60-digit numerics against the Jacobi generating function and the Horn $H_3$ form, negative controls. |
 | [`checks/verify_glm.py`](checks/verify_glm.py) | Second independent reviewer's verification: exact two-variable coefficient comparisons, proof-step identities, 60-digit numerics, the $H_3$ reduction, sensitivity mutations. |
+| [`checks/verify_gemini_exact.py`](checks/verify_gemini_exact.py) | Third independent reviewer's exact check: the literal (uncancelled) right side against the defining $F_4$ series in exact rational arithmetic, polynomial-in-$x$ coefficients, the $H_3$ form, and four planted errors that must be caught. |
+| [`checks/verify_gemini_numeric.py`](checks/verify_gemini_numeric.py) | Third independent reviewer's numeric check: 110-digit decimal-complex summation of both literal series, the removable $S$-pole case, boundary and conditional-convergence diagnostics, planted errors. |
 
 Each program defaults to a reduced size so the suite finishes quickly;
 `--full` (or `--order 40` for `check_symbolic.py`) regenerates the
 saved logs [`checks/numeric.txt`](checks/numeric.txt),
 [`checks/symbolic.txt`](checks/symbolic.txt),
 [`checks/opus-output.txt`](checks/opus-output.txt) and
-[`checks/glm-output.txt`](checks/glm-output.txt).
+[`checks/glm-output.txt`](checks/glm-output.txt). The two Gemini programs
+already run at full size; their logs
+[`checks/gemini-exact-output.txt`](checks/gemini-exact-output.txt) and
+[`checks/gemini-numeric-output.txt`](checks/gemini-numeric-output.txt)
+are always reproduced.
 
 ## Who did what
 
@@ -113,18 +124,23 @@ saved logs [`checks/numeric.txt`](checks/numeric.txt),
 - **Proof:** GPT-6.2 Sol ([proof.md](proof.md)). It answers the question
   Cohl posted; it does not establish a new theorem.
 - **Independent exact checks:** Claude Opus 5.5
-  ([review](reviews/cohl-opus.md), [code](checks/check_opus.py)) and
-  GLM 5.3 ([review](reviews/cohl-glm.md), [code](checks/verify_glm.py)),
-  each written from the posted statement only, with its own code.
+  ([review](reviews/cohl-opus.md), [code](checks/check_opus.py)), GLM 5.3
+  ([review](reviews/cohl-glm.md), [code](checks/verify_glm.py)), and
+  Gemini 4 Neon ([review](reviews/cohl-gemini.md),
+  [code](checks/verify_gemini_exact.py)) — each written from the posted
+  statement only, with its own code. The Gemini 4 Neon review was
+  conducted without seeing the other two reviews.
 
 ## Repository layout
 
 - [`proof.md`](proof.md) / [`proof.pdf`](proof.pdf) — the proof and the
   literature survey, with computational-check description.
-- [`checks/`](checks/) — the four check programs, `run_all.py`, and the
-  four saved full-size logs.
-- [`reviews/`](reviews/) — the two independent review reports, as
+- [`checks/`](checks/) — the six check programs, `run_all.py`, and the
+  saved full-size logs.
+- [`reviews/`](reviews/) — the three independent review reports, as
   written.
-- `cohl-f4.jpg` — Cohl's posted image.
+- `cohl-f4.jpg` — Cohl's posted image (his image, reproduced with
+  credit and a link to his post; not covered by the repository's
+  licences).
 - [`LICENSE`](LICENSE) — MIT, for the code.
   [`LICENSE-text`](LICENSE-text) — CC BY 4.0, for the text and the proof.

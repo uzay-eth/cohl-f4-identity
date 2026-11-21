@@ -22,15 +22,25 @@ each one re-derives or re-sums both sides of the statement in its own way:
      exact two-variable coefficient comparisons, proof-step identities,
      60-digit numeric summations, the Horn H3 reduction, and a mutation
      test of its own sensitivity.
+  5. checks/verify_gemini_exact.py  -- third independent review's exact
+     check: literal right side against the literal F4 series in exact
+     rational arithmetic, polynomial-in-x coefficients, the Horn H3
+     form, and four planted errors that must be caught.
+  6. checks/verify_gemini_numeric.py  -- third independent review's
+     numeric check: 110-digit decimal-complex summation of both literal
+     series, the removable S-pole case, boundary and conditional-
+     convergence diagnostics, and planted errors.
 
 A check passes only if its program exits 0, prints a PASS summary and never
 prints FAIL. The script exits non-zero if any check fails. Total run time
 is about three minutes on a single core.
 
-Each program defaults to this reduced size so that the suite finishes
-quickly; the saved logs numeric.txt, symbolic.txt, opus-output.txt and
-glm-output.txt record the full-size runs, which each program can
-regenerate with --full (for check_symbolic.py, --order 40).
+The first four programs default to a reduced size so that the suite
+finishes quickly; the saved logs numeric.txt, symbolic.txt,
+opus-output.txt and glm-output.txt record their full-size runs, which
+those programs regenerate with --full (for check_symbolic.py, --order 40).
+The two Gemini programs already run at full size; their logs
+gemini-exact-output.txt and gemini-numeric-output.txt are always identical.
 """
 
 import subprocess
@@ -42,6 +52,8 @@ CHECKS = [
     ("check_symbolic (proof, SymPy over QQ)", "checks/check_symbolic.py"),
     ("check_opus (independent review 1)", "checks/check_opus.py"),
     ("verify_glm (independent review 2)", "checks/verify_glm.py"),
+    ("verify_gemini_exact (independent review 3, exact)", "checks/verify_gemini_exact.py"),
+    ("verify_gemini_numeric (independent review 3, numeric)", "checks/verify_gemini_numeric.py"),
 ]
 
 

@@ -22,6 +22,9 @@ SOFTWARE.
 
 The MIT License applies to the code in this repository, including everything
 in checks/ (see checks/check_numeric.py, checks/check_symbolic.py,
-checks/check_opus.py, checks/verify_glm.py and checks/run_all.py). The text
+checks/check_opus.py, checks/verify_glm.py, checks/verify_gemini_exact.py,
+checks/verify_gemini_numeric.py and checks/run_all.py). The text
 and the proof (README.md, proof.md, proof.pdf, reviews/) are licensed under
-Creative Commons Attribution 4.0 International; see LICENSE-text.
+Creative Commons Attribution 4.0 International; see LICENSE-text. The
+posted image cohl-f4.jpg belongs to Howard S. Cohl and is covered by
+neither licence; see LICENSE-text.

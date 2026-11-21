@@ -1,0 +1,62 @@
+[SELF-TEST PASS] CDec complex power vs binomial series discrepancy = 2.979e-107
+
+=== HIGH-PRECISION INTERIOR NUMERICAL CHECKS (90+ DIGITS) ===
+[PASS] Real positive params           | L=0.5434, R=0.3114 | K=180->240
+       LHS = 1.014126399169871318612
+       RHS = 1.014126399169871318612
+       |LHS-RHS|/scale = 3.155e-108  (dLHS=8.875e-109, dRHS=2.137e-92)
+[PASS] Real negative non-int params   | L=0.6109, R=0.4167 | K=200->260
+       LHS = 0.9392521496229931442054
+       RHS = 0.9392521496229931442054
+       |LHS-RHS|/scale = 1.263e-102  (dLHS=1.800e-109, dRHS=9.544e-80)
+[PASS] Complex params & args          | L=0.6397, R=0.2317 | K=200->260
+       LHS = 0.7235302227529857915995 - 0.1085816170353094365375i
+       RHS = 0.7235302227529857915995 - 0.1085816170353094365375i
+       |LHS-RHS|/scale = 7.802e-108  (dLHS=1.477e-107, dRHS=0.000e-107)
+[PASS] Complex closer to boundary     | L=0.7845, R=0.6562 | K=320->420
+       LHS = 1.048564456489454168925 - 0.007815379089241536245448i
+       RHS = 1.048564456489454168925 - 0.007815379089241536245448i
+       |LHS-RHS|/scale = 1.101e-85  (dLHS=4.348e-97, dRHS=5.336e-67)
+[PASS] Special x = 0, complex t       | L=0.6578, R=0.6300 | K=340->420
+       LHS = 1.047914518641011718728 - 0.03247582684423067183904i
+       RHS = 1.047914518641011718728 - 0.03247582684423067183904i
+       |LHS-RHS|/scale = 1.339e-87  (dLHS=0.000e+1, dRHS=1.632e-71)
+[PASS] Special x = -1, t = -0.2       | L=0.4472, R=0.5556 | K=260->340
+       LHS = 0.8310331543562019004160
+       RHS = 0.8310331543562019004160
+       |LHS-RHS|/scale = 6.042e-90  (dLHS=0.000e-1843, dRHS=1.744e-69)
+[PASS] Special x = +1, t = 0.3+0.4i   | L=0.7071, R=0.0000 | K=260->340
+       LHS = 0.9121176414042640391151 - 0.1675811346601211377016i
+       RHS = 0.9121176414042640391151 - 0.1675811346601211377016i
+       |LHS-RHS|/scale = 3.284e-107  (dLHS=4.625e-83, dRHS=0.000e-107)
+
+=== REMOVABLE S IN {0,-1,-2,...} POLE CHECK (proof.md lines 44-45) ===
+[PASS] a=-2.3, b=-1.7 => S=-3: literal RHS raises InvalidOperation (0/0 pole); cancelled form (3) matches LHS to 2.467e-87
+
+=== PLANTED DELIBERATE ERRORS IN HIGH-PRECISION NUMERICS ===
+[CAUGHT] mode=sign_flip        | |LHS - bad_RHS|/scale = 8.003000e-2
+[CAUGHT] mode=denom_m_plus_n   | |LHS - bad_RHS|/scale = 1.000000e+0
+
+=== BOUNDARY & CONVERGENCE-DOMAIN DIAGNOSTIC TESTS ===
+[BOUNDARY L=R=1, uv!=0, d=5.5>1/2] L=1.0000, R=1.0000, K=120:
+       LHS = 4.1513972435048619414  | RHS = 4.1514111561924402132  | |LHS-RHS| = 1.391e-5
+       deg-120 abs terms: LHS=5.541e-7, RHS=1.090e-6 (decaying as k^(-6))
+[BOUNDARY x=-1,t=-1, d=5.5>max(ReB=1.5,1/2)] L=1.0000, R=1.0000, K=150:
+       LHS=1.18258254496854803, RHS=1.18235681773516081, Gauss=1.18258257941841868
+       |LHS-Gauss|=3.445e-8, |RHS-Gauss|=2.258e-4
+[BOUNDARY x=-1,t=-1, d=0.25 (d>ReB=-0.5, d<=1/2)] Testing dual-row condition:
+       LHS deg-k abs term: k=60: 1.516e-4, k=120: 4.496e-5 (ratio=0.2964, expected ~2^(-1.75)=0.2973, CONVERGES)
+       RHS deg-k abs term: k=60: 9.388e-3, k=120: 5.606e-3 (ratio=0.5972, expected ~2^(-0.75)=0.5946, DIVERGES)
+[OUTSIDE COMMON DOMAIN x=-1,t=0.5] L=0.7071<1, R=8.0000>1:
+       deg-60 abs terms: LHS=6.304e-20 (converges), RHS=3.352e+51 (diverges ~ 8^60)
+[CONDITIONAL CONVERGENCE D1: x=1, t=-1, gamma=1/2]
+       LHS partial sum K=200 = 0.727016545196 vs RHS = 1/sqrt(2) = 0.707106781187 (diff=1.991e-2)
+       LHS abs sum K=200 = 15.9876, deg-200 term = 3.9869e-2 (diverges as sum k^(-1/2))
+[CONDITIONAL CONVERGENCE D2: x=-1, t=3-2*sqrt(2), alpha=0, beta=0, gamma=1/2 (R=1, d=1/2)]
+       L=0.4142<1, R=1.000000
+       LHS (exact to ~1e-58) = 0.92387953251129
+       RHS K=150 = 0.92495157005337, K=151 = 0.92281456194600, avg = 0.92388306599968
+       RHS abs sum K=150 = 3.06998, deg-150 abs = 2.5550e-3 (~ c/k, diverges log-wise, alternates to LHS)
+
+=== SUMMARY ===
+All interior high-precision checks passed: True

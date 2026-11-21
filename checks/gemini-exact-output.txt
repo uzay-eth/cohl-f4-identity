@@ -1,0 +1,32 @@
+=== EXACT RATIONAL POWER-SERIES VERIFICATION (COHL F4 IDENTITY) ===
+[PASS] Generic positive rationals             (a=1/3, b=2/5, g=7/4, x=3/7, ord=20)
+[PASS] Awkward negative non-integers          (a=-7/3, b=-5/2, g=-11/5, x=-2/3, ord=20)
+[PASS] Negative non-integers, x = +1          (a=-3/2, b=-7/4, g=-1/3, x=1, ord=20)
+[PASS] Negative non-integers, x = -1          (a=-3/2, b=-7/4, g=-1/3, x=-1, ord=20)
+[PASS] Negative non-integers, x = 0           (a=-3/2, b=-7/4, g=-1/3, x=0, ord=20)
+[PASS] Large negative non-integers, x = 5     (a=-17/5, b=-13/3, g=-9/2, x=5, ord=20)
+[PASS] Terminating gamma = -5, x = 0          (a=-5/3, b=-11/4, g=-5, x=0, ord=20) | tail(r>5) zero: True
+[PASS] Terminating gamma = -5, x = -1         (a=-5/3, b=-11/4, g=-5, x=-1, ord=20) | tail(r>5) zero: True
+[PASS] Terminating gamma = -5, x = 13/4       (a=-5/3, b=-11/4, g=-5, x=13/4, ord=20) | tail(r>5) zero: True
+[PASS] Specialization gamma = alpha+beta+1    (a=-4/3, b=-7/5, g=-26/15, x=2/5, ord=20)
+[PASS] Near denominator poles                 (a=-1999/1000, b=-2990/997, g=-1/7, x=1/2, ord=18)
+
+=== EXACT POLYNOMIAL-IN-x CHECK (ALL x SIMULTANEOUSLY) ===
+[PASS] Symbolic polynomial in x for a=-7/3, b=-5/2, g=-11/5 through t^16 (153 (r,d) coeffs)
+
+=== EXACT HORN H3 REDUCTION CHECK (proof.md eq. lines 360-363) ===
+[PASS] F4 == (1-t)^(-gamma) H3(gamma, S-gamma; A; w, (1-t)w) through t^16
+
+=== PLANTED DELIBERATE ERROR DETECTION TESTS ===
+[CAUGHT at t^2] sign_flip        | Drop minus sign in second base: -2t^2(x-1) -> +2t^2(x-1)
+                 exact residual LHS - RHS = -539/120
+[CAUGHT at t^2] denom_m_plus_n   | Denominator subscript typo: (alpha+beta+1)_{m+2n} -> (alpha+beta+1)_{m+n}
+                 exact residual LHS - RHS = -12397/1440
+[CAUGHT at t^2] shift_param      | Parameter shift typo: (alpha+beta-gamma+1)_n -> (alpha+beta-gamma)_n
+                 exact residual LHS - RHS = 11/8
+[CAUGHT at t^1] half_param_shift | Half-parameter typo: ((alpha+beta+2)/2)_{m+n} -> ((alpha+beta+3)/2)_{m+n}
+                 exact residual LHS - RHS = 11/8
+
+=== SUMMARY ===
+All exact identity checks passed: True
+All 4 planted errors caught:     True
