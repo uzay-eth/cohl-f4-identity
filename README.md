@@ -1,4 +1,4 @@
-# Cohl's Appell $F_4$ identity
+# Cohl's Appell $`F_4`$ identity
 
 On 2023-09-08, Howard S. Cohl posted [this formula](https://x.com/hcohl001/status/1700261948808700126)
 on X and asked whether anyone could prove it. The formula and the image
@@ -15,9 +15,9 @@ a link to it. It is not covered by this repository's licences; see
 
 ## The statement
 
-In LaTeX, with $(a)_j$ the rising factorial:
+In LaTeX, with $`(a)_j`$ the rising factorial:
 
-$$
+```math
 \begin{aligned}
 &F_4\left(\gamma,\beta+1;\alpha+1,\beta+1;
       \frac{t(x-1)}{2},\frac{t(x+1)}{2}\right)\\
@@ -30,21 +30,21 @@ $$
   \left(\frac{2t(x-1)}{(t-1)^2}\right)^m
   \left(-\frac{2t^2(x-1)}{(t-1)^2}\right)^n ,
 \end{aligned}
-$$
+```
 
 where
-$F_4(a,b;c,d;u,v)=\sum_{i,j\ge0}\frac{(a)_{i+j}(b)_{i+j}}{(c)_i(d)_j\,i!j!}u^iv^j$
+$`F_4(a,b;c,d;u,v)=\sum_{i,j\ge0}\frac{(a)_{i+j}(b)_{i+j}}{(c)_i(d)_j\,i!j!}u^iv^j`$
 ([DLMF 16.13.4](https://dlmf.nist.gov/16.13.E4)).
 
 ## The answer
 
-**True.** The identity holds as a formal power series in $t$ (with
-polynomial coefficients in $x$ and rational dependence on $\alpha,\beta,\gamma$),
+**True.** The identity holds as a formal power series in $`t`$ (with
+polynomial coefficients in $`x`$ and rational dependence on $`\alpha,\beta,\gamma`$),
 and as an equality of the two absolutely convergent defining series wherever
 both sides converge absolutely. The common open domain for nonterminating
-$\gamma$ is $\sqrt{|u|}+\sqrt{|v|}<1$ together with $4|u|<|1-t|^2$, where
-$u=t(x-1)/2$ and $v=t(x+1)/2$; the exact boundary conditions and the
-terminating case $\gamma\in\{0,-1,-2,\ldots\}$ are worked out in the proof.
+$`\gamma`$ is $`\sqrt{|u|}+\sqrt{|v|}<1`$ together with $`4|u|<|1-t|^2`$, where
+$`u=t(x-1)/2`$ and $`v=t(x+1)/2`$; the exact boundary conditions and the
+terminating case $`\gamma\in\{0,-1,-2,\ldots\}`$ are worked out in the proof.
 
 The full proof with its convergence analysis is [proof.md](proof.md)
 ([proof.pdf](proof.pdf) is built from the same text).
@@ -52,18 +52,18 @@ The full proof with its convergence analysis is [proof.md](proof.md)
 ## The short proof route
 
 The left side is the generating function
-$\sum_{n\ge0}\frac{(\gamma)_n}{(\alpha+1)_n}P_n^{(\alpha,\beta)}(x)\,t^n$
+$`\sum_{n\ge0}\frac{(\gamma)_n}{(\alpha+1)_n}P_n^{(\alpha,\beta)}(x)\,t^n`$
 for Jacobi polynomials in its binomial-sum form
 ([DLMF 18.5.8](https://dlmf.nist.gov/18.5.E8)). Write each
-$P_n^{(\alpha,\beta)}(x)$ as a Gauss function
+$`P_n^{(\alpha,\beta)}(x)`$ as a Gauss function
 ([DLMF 18.5.7](https://dlmf.nist.gov/18.5.E7)) and interchange the two
-sums. The coefficient of $\bigl(t(x-1)/2\bigr)^k$ is then a Gauss series
-${}_2F_1(\gamma+k,S+2k;S+k;t)$ with an explicit prefactor, where
-$S=\alpha+\beta+1$. Euler's transformation
+sums. The coefficient of $`\bigl(t(x-1)/2\bigr)^k`$ is then a Gauss series
+$`{}_2F_1(\gamma+k,S+2k;S+k;t)`$ with an explicit prefactor, where
+$`S=\alpha+\beta+1`$. Euler's transformation
 ([DLMF 15.8.1](https://dlmf.nist.gov/15.8.E1)) turns it into a terminating
 series, and collecting powers with the duplication formula
 ([DLMF 5.2.8](https://dlmf.nist.gov/5.2.E8)) replaces each collected
-factor $(S)_{2k}$ by $4^k\bigl(\tfrac S2\bigr)_k\bigl(\tfrac{S+1}2\bigr)_k$,
+factor $`(S)_{2k}`$ by $`4^k\bigl(\tfrac S2\bigr)_k\bigl(\tfrac{S+1}2\bigr)_k`$,
 which is exactly the posted right side. The proof in
 [proof.md](proof.md) does the same computation coefficientwise in the
 formal power-series ring, then upgrades it to the convergent case with
@@ -76,13 +76,13 @@ is a five-line consequence of DLMF 18.5.7–18.5.8 combined with Euler's
 transformation DLMF 15.8.1 and the duplication formula DLMF 5.2.8. In
 that route the only work is bookkeeping: a terminating Gauss series
 re-collected into the posted double sum. Equivalently, it is the
-repeated-parameter $F_4\to F_1$ reduction of DLMF 16.16
-(16.16.5_5 and 16.16.8) followed by the quadratic $F_1\to H_3$ change of
+repeated-parameter $`F_4\to F_1`$ reduction of DLMF 16.16
+(16.16.5_5 and 16.16.8) followed by the quadratic $`F_1\to H_3`$ change of
 variables, re-collected by the duplication formula. The special case
-$\gamma=\alpha+\beta+1$ was published by Cohl and MacKenzie (eq. (7) of
+$`\gamma=\alpha+\beta+1`$ was published by Cohl and MacKenzie (eq. (7) of
 the arXiv PDF/latex source of *Generalizations and specializations of
 generating functions*, 2013 revision; the arXiv HTML rendering numbers
-the same equation (13)); in that case the inner sum reduces to $n=0$. A
+the same equation (13)); in that case the inner sum reduces to $`n=0`$. A
 survey of the surrounding literature is part of [proof.md](proof.md).
 
 ## How to check
@@ -101,11 +101,11 @@ checks are
 | Check | What it does |
 | --- | --- |
 | [`checks/check_numeric.py`](checks/check_numeric.py) | The proof's check: both double series summed literally as printed, per case at 85 and 115 decimal digits with two independent cutoffs. |
-| [`checks/check_symbolic.py`](checks/check_symbolic.py) | The proof's check: every coefficient $[t^r\,y^k]$ compared as an exact polynomial over $\mathbb{Q}$ in the parameters. |
-| [`checks/check_opus.py`](checks/check_opus.py) | First independent reviewer's check: exact rational coefficients, fully symbolic comparison, 60-digit numerics against the Jacobi generating function and the Horn $H_3$ form, negative controls. |
-| [`checks/verify_glm.py`](checks/verify_glm.py) | Second independent reviewer's verification: exact two-variable coefficient comparisons, proof-step identities, 60-digit numerics, the $H_3$ reduction, sensitivity mutations. |
-| [`checks/verify_gemini_exact.py`](checks/verify_gemini_exact.py) | Third independent reviewer's exact check: the literal (uncancelled) right side against the defining $F_4$ series in exact rational arithmetic, polynomial-in-$x$ coefficients, the $H_3$ form, and four planted errors that must be caught. |
-| [`checks/verify_gemini_numeric.py`](checks/verify_gemini_numeric.py) | Third independent reviewer's numeric check: 110-digit decimal-complex summation of both literal series, the removable $S$-pole case, boundary and conditional-convergence diagnostics, planted errors. |
+| [`checks/check_symbolic.py`](checks/check_symbolic.py) | The proof's check: every coefficient $`[t^r\,y^k]`$ compared as an exact polynomial over $`\mathbb{Q}`$ in the parameters. |
+| [`checks/check_opus.py`](checks/check_opus.py) | First independent reviewer's check: exact rational coefficients, fully symbolic comparison, 60-digit numerics against the Jacobi generating function and the Horn $`H_3`$ form, negative controls. |
+| [`checks/verify_glm.py`](checks/verify_glm.py) | Second independent reviewer's verification: exact two-variable coefficient comparisons, proof-step identities, 60-digit numerics, the $`H_3`$ reduction, sensitivity mutations. |
+| [`checks/verify_gemini_exact.py`](checks/verify_gemini_exact.py) | Third independent reviewer's exact check: the literal (uncancelled) right side against the defining $`F_4`$ series in exact rational arithmetic, polynomial-in-$`x`$ coefficients, the $`H_3`$ form, and four planted errors that must be caught. |
+| [`checks/verify_gemini_numeric.py`](checks/verify_gemini_numeric.py) | Third independent reviewer's numeric check: 110-digit decimal-complex summation of both literal series, the removable $`S`$-pole case, boundary and conditional-convergence diagnostics, planted errors. |
 
 Each program defaults to a reduced size so the suite finishes quickly;
 `--full` (or `--order 40` for `check_symbolic.py`) regenerates the
